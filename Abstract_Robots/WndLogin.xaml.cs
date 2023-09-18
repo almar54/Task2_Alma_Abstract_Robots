@@ -27,6 +27,13 @@ namespace Robots_inc
         public MainWindow()
         {
             InitializeComponent();
+            GetSixWorkers();
+        }
+
+        private List<Worker> GetSixWorkers()
+        {
+            List<Worker> workers = new List<Worker>();
+
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)

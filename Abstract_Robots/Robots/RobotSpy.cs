@@ -12,23 +12,43 @@ namespace Robots_inc
 		private DateTime creationDate;
 		private double batteryStatus; 
 
-		//1. עדכנו את הפעולה הבונה כך שתקבל פרמטרים בהתאם לתכונות
-		public RobotSpy(string model)
+		
+		public RobotSpy(string model, DateTime creationDate, double batteryStatus)
 		{
 			this.model = model;
-			int x = 6;
+			this.creationDate = creationDate;
+			this.batteryStatus = batteryStatus;
 		}
-		public string GetModel() { 	return this.model; }
+		public string GetModel() 
+		{ 	
+			return this.model; 
+		}
+		public DateTime GetCreationDate()
+        {
+			return this.creationDate;
+        }
+        public double GetBatteryStatus()
+        {
+            return this.batteryStatus;
+        }
+		public void SetBatteryStatus(double batteryStatus)
+        {
+			this.batteryStatus = batteryStatus;
+        }
+		
 
-		//2. השלימו פעולות מאחזרות עבור התכונות הנוספות
-		//3. הוסיפו פעולה המעדכנת את מצב הסוללה
-
-		public abstract void MoveForward();
+        public abstract void MoveForward();
 		public abstract void MoveBackward();
 		public abstract void TurnLeft();
 		public abstract void TurnRight();
 
-		public void TakePicture() { } //4. הוסיפו התייחסות למצב סוללה
-		public void ChargeBattery() { } //5. עדכנו את מצב הסוללה ל-100
+		public void TakePicture() 
+		{
+			this.batteryStatus = this.batteryStatus - 5;
+		}
+		public void ChargeBattery()
+		{
+			this.batteryStatus = 100;
+		}
 	}
 }

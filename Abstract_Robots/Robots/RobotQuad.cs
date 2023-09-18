@@ -8,9 +8,14 @@ namespace Robots_inc
 {
     public class RobotQuad : RobotSpy
     {
-        //1. עדכנו את הפעולה הבונה כך שתתאים לפעולת במחלקת העל
-        public RobotQuad() : base("Roboquad")
+        public RobotQuad() : base("Roboquad", DateTime.Now, 100)
         { }
+
+        public override void MoveBackward()
+        {
+            for (int i = 0; i < 4; i++)
+                this.MoveLeg(i, -1);
+        }
 
         public override void MoveForward()
         {
@@ -18,11 +23,21 @@ namespace Robots_inc
                 this.MoveLeg(i, 1);
         }
 
-        //2. השלימו את התנועות החסרות מתוך המצגת או על הבנתכם
+        public override void TurnLeft()
+        {
+            for (int i = 0; i < 4; i++)
+                this.MoveLeg(-1, i);
+        }
+
+        public override void TurnRight()
+        {
+            for (int i = 0; i < 4; i++)
+                this.MoveLeg(1, i);
+        }
 
         private void MoveLeg(int legId, int dir) 
         {
-            //3. הוסיפו התייחסות לסוללה
+            SetBatteryStatus(GetBatteryStatus() - 3);
         }
     }
 

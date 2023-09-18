@@ -8,8 +8,7 @@ namespace Robots_inc
 {
     public class RobotWheels : RobotSpy
     {
-        //1. עדכנו את הפעולה הבונה כך שתתאים לפעולת במחלקת העל
-        public RobotWheels() : base("Spyke") { } 
+        public RobotWheels() : base("Spyke", DateTime.Now, 100) { } 
 
         public override void MoveForward()
         {
@@ -23,13 +22,22 @@ namespace Robots_inc
 
         private void TurnWheels(int rightDir, int leftDir)
         {
-            //2. הוסיפו התייחסות לסוללה
+            SetBatteryStatus(GetBatteryStatus() - 4.5); 
         }
 
         public void WaveHands()
-        { 
-            //3. הוסיפו התייחסות לסוללה 
+        {
+            SetBatteryStatus(GetBatteryStatus() - 2);
         }
 
+        public override void MoveBackward()
+        {
+            this.TurnWheels(1, 1);
+        }
+
+        public override void TurnLeft()
+        {
+            this.TurnWheels(0, -1);
+        }
     }
 }

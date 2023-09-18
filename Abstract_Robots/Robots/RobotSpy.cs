@@ -16,6 +16,7 @@ namespace Robots_inc
 		public RobotSpy(string model)
 		{
 			this.model = model;
+			int x = 6;
 		}
 		public string GetModel() { 	return this.model; }
 

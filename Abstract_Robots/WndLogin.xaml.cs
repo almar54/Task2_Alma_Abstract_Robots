@@ -27,9 +27,9 @@ namespace Robots_inc
         public MainWindow()
         {
             InitializeComponent();
-            GetSixWorkers();
-            GetEightRob();
-            GetFiveTasks();
+           workers= GetSixWorkers();
+           activeRobots = GetEightRob();
+           activeMissions = GetFiveTasks();
         }
 
         private List<Mission> GetFiveTasks()
@@ -75,10 +75,7 @@ namespace Robots_inc
             MessageBox.Show("Have a robotic day (-:","Good bye",MessageBoxButton.OK);
             this.Close();
         }
-
-        //משימה 3
-        //כתבו פעולה המחזירה אוסף של 5 משימות
-        //כתבו זימון לפעולה שכתבתם בפעולה הבונה של החלון       
+    
 
         //משימה 4
         //login כתבו פעולה המגיבה לללחיצה על כפתור 
@@ -86,11 +83,17 @@ namespace Robots_inc
         //WndMain אם כן, יש ליצור מופע של חלון 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            //...אם מספר הזיהוי והסיסמה תואמים לעובד ברשימה, אז
-            Worker worker = workers[?];
-            WndMain main = new WndMain(worker, activeMissions, activeRobots, workers);
-            main.ShowDialog();
-
+            string id = tbxID.Text;
+            string pass = tbxPassword.Password;
+            foreach (Worker w in workers)
+            {
+                if (w.GetIdNumber().Equals(id) && w.GetPassword().Equals(pass))
+                {
+                    WndMain main = new WndMain(w, activeMissions, activeRobots, workers);
+                    main.ShowDialog();
+                    return;
+                }
+            }
         }
     }
 }

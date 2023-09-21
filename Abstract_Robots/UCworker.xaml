@@ -8,8 +8,6 @@
              d:DesignHeight="150" d:DesignWidth="200">
     <UserControl.Resources>
         <Style TargetType="Label">
-            <Setter Property="Foreground" Value="DarkCyan"/>
-            <Setter Property="Background" Value="White"/>
             <Setter Property="FontSize" Value="20"/>
         </Style>
     </UserControl.Resources>

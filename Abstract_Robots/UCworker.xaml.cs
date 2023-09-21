@@ -32,22 +32,22 @@ namespace Robots_inc
             }
             if (worker is GeneralManager)
             {
-                lbRole.Content = "Big Boss";
-                brMain.Background = Brushes.Orchid;
+                lbRole.Content = "General Manager";
+                brMain.Background = Brushes.LightBlue;
                 this.Foreground = Brushes.White;
                 lbRole.FontWeight = FontWeights.Bold;
             }
             else if (worker is OperationManager)
             {
-                lbRole.Content = "Small Boss";
-                brMain.Background = Brushes.Violet;
+                lbRole.Content = "Operational Manager";
+                brMain.Background = Brushes.LightCoral;
                 this.Foreground = Brushes.White;
                 lbRole.FontWeight = FontWeights.Bold;
             }
             else
             {
                 lbRole.Content = "Operational Worker";
-                brMain.Background = Brushes.Transparent;
+                brMain.Background = Brushes.Beige;
                 this.Foreground = Brushes.White;
                 lbRole.FontWeight = FontWeights.Bold;
             }

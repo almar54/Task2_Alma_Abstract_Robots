@@ -10,10 +10,11 @@
     <Window.Resources>
         <Style x:Key="tbHeader" TargetType="TextBlock">
             <Setter Property="TextAlignment" Value="Center"/>
-            <Setter Property="FontFamily" Value="Consolas"/>
+            <Setter Property="FontFamily" Value="Alef"/>
             <Setter Property="FontSize" Value="35"/>
             <Setter Property="Padding" Value="15"/>
-            <Setter Property="Foreground" Value="#3d8d86"/>
+            <Setter Property="Foreground" Value="Coral"/>
+            <Setter Property="FontWeight" Value="Bold"/>
         </Style>
     </Window.Resources>
     <DockPanel>

@@ -62,5 +62,15 @@ namespace Robots_inc
                     break;
             }
         }
+
+        private void ViewWorkers_Click(object sender, RoutedEventArgs e)
+        {
+            workPanel.Children.Clear();
+            activeWorkers.ForEach(worker => { 
+                UCworker ucWorker = new UCworker(worker);
+                workPanel.Children.Add(ucWorker);
+            });
+            
+        }
     }
 }

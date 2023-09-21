@@ -21,6 +21,7 @@ namespace Robots_inc
             this.birthDate = bDate;
             this.password = pass;
         }
+        public string FullName { get { return fullName; }  set { fullName = value; } }
         //משימה 2
         //get כתבו פעולות מאחזרות 
         public string GetFullName()

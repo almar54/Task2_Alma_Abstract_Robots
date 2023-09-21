@@ -60,12 +60,12 @@ namespace Robots_inc
         private List<Worker> GetSixWorkers()
         {
             List<Worker> workers = new List<Worker>();
-            workers.Add(new GeneralManager(25, "roy", "123", DateTime.Now, "123", 15000));
-            workers.Add(new OperationManager(50, 8, 3, "jade", "456", DateTime.Now, "456"));
-            workers.Add(new OperationManager(50, 8, 3, "ben", "225", DateTime.Now, "225"));
-            workers.Add(new OperationalWorker(50, 8, "john", "826", DateTime.Now, "826"));
-            workers.Add(new OperationalWorker(50, 8, "ron", "334", DateTime.Now, "334"));
-            workers.Add(new OperationalWorker(50, 8, "nir", "555", DateTime.Now, "555"));
+            workers.Add(new GeneralManager(25, "roy", "123", new DateTime(1989, 02, 08), "123", 15000));
+            workers.Add(new OperationManager(50, 8, 3, "jade", "456", new DateTime(1992, 11, 10), "456"));
+            workers.Add(new OperationManager(50, 8, 3, "ben", "225", new DateTime(1985, 03, 27), "225"));
+            workers.Add(new OperationalWorker(50, 8, "john", "826", new DateTime(2000, 09, 21), "826"));
+            workers.Add(new OperationalWorker(50, 8, "ron", "334", new DateTime(1994, 10, 12), "334"));
+            workers.Add(new OperationalWorker(50, 8, "nir", "555", new DateTime(1987, 08, 23), "555"));
             return workers;
         }
 
